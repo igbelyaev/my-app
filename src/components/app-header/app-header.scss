@@ -1,0 +1,44 @@
+.header {
+    height: 260px;
+    background: url('../../../public/img/coffee-shop-1209863_1920.png') center no-repeat;
+    padding-top: 130px;
+    position: relative;
+    &_menu {
+        position: absolute;
+        top: 30px;
+        left: 185px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        width: 325px;
+        height: 40px;
+        a {
+            display: inline-block;
+            color: #fff;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            &:first-of-type {
+                position: relative;
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -16px;
+                    left: -35px;
+                    width: 35px;
+                    height: 35px;
+                    background: url('../../../public/icons/grain.png') center (center / cover) no-repeat
+                }
+            }
+        }
+    }
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 58px;
+        color: #FFFFFF;
+    }
+}
