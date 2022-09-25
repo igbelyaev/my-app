@@ -1,0 +1,23 @@
+@import '../../index.scss';
+
+.filter {
+    &_descr {
+        @include text;
+        line-height: 30px;
+        display: inline-block;
+        margin-right: 35px;
+    }
+    &_btn {
+        display: inline-block;
+        width: 75px;
+        height: 30px;
+        margin-right: 5px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 30px;
+        text-align: center;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,8 @@
+.catalog {
+    // width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    gap: 60px 70px;
+    justify-content: center;
+    justify-items: center;
+}

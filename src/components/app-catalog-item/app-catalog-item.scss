@@ -1,0 +1,22 @@
+@import '../../index.scss';
+
+.sort {
+    width: 220px;
+    height: 260px;
+    padding: 37px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
+    &_name, &_weigth, &_country {
+        @include text;
+    }
+    &_price {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
