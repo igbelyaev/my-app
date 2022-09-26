@@ -10,12 +10,17 @@ class Search extends Component {
         }
     }
 
+    
+
     render() {
         return (
             <div className="search">
                 <div className="search_caption">Looking for</div>
-            <input className="search_input" type="text" placeholder='start typing here...' />
-            {/* // value={this.state.name}/> */}
+                <input 
+                    className="search_input" 
+                    type="text" 
+                    placeholder='start typing here...'
+                    value={this.state.name}/>
             </div>
             
         )

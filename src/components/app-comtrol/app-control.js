@@ -3,12 +3,12 @@ import Filter from '../app-filter/app-filter';
 
 import './app-control.scss';
 
-function Control() {
+function Control({filterSelection}) {
     return (
         <section className="control">
             <div className="control_wrapper">
                 <Search />
-                <Filter />
+                <Filter filterSelection={filterSelection}/>
             </div>    
         </section>
     )

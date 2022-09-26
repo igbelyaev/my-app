@@ -20,17 +20,32 @@ class App extends Component {
                 {sort: 'AROMO Coffee', weigth: '1 kg', country: 'Brazil', price: 5.99, pic: './img/71qBQnpQFYL.png', id: 4},
                 {sort: 'Brasilian Sun', weigth: '1 kg', country: 'Brazil', price: 7.99, pic: './img/71qBQnpQFYL.png', id: 5},
                 {sort: 'Cacao Coffee', weigth: '1 kg', country: 'Brazil', price: 4.99, pic: './img/71qBQnpQFYL.png', id: 6}
-            ]
+            ],
+            filter: '',
+            value: ''
         }
     }
 
+    filterSelection = (active) => {
+        this.setState(() => {return ({filter: active})});
+    }
+
     render() {
+        const {catalog, filter} = this.state;
+        let visibleCatalog = [];
+        
+        if (filter === '') {
+            visibleCatalog = catalog;
+        } else {
+            visibleCatalog = catalog.filter(item => item.country == filter);
+        }
+        
         return (
             <div className="App">
                 <Header />
                 <About />
-                <Control />
-                <Catalog catalog={this.state.catalog}/>
+                <Control filterSelection={this.filterSelection}/>
+                <Catalog catalog={visibleCatalog}/>
                 <Footer />
             </div>
         );
