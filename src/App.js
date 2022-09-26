@@ -3,6 +3,7 @@ import Header from './components/app-header/app-header';
 import About from './components/app-about/app-about';
 import Control from './components/app-comtrol/app-control';
 import Catalog from './components/app-catalog/app-catalog';
+import Footer from './components/app-footer/app-footer';
 // import Filter from './components/app-filter/app-filter';
 
 import './App.scss';
@@ -30,11 +31,7 @@ class App extends Component {
                 <About />
                 <Control />
                 <Catalog catalog={this.state.catalog}/>
-                <header className="App-header">
-                    <div> Hello, world </div>
-                    
-                    <div> Hello, world </div>
-                </header>
+                <Footer />
             </div>
         );
      }  

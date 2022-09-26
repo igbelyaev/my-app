@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .header {
     height: 260px;
     background: url('../../../public/img/coffee-shop-1209863_1920.png') center no-repeat;
@@ -10,26 +12,13 @@
         display: flex;
         justify-content: space-between;
         align-items: end;
-        width: 325px;
+        width: 355px;
         height: 40px;
         a {
-            display: inline-block;
-            color: #fff;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 17px;
-            &:first-of-type {
-                position: relative;
-                &::before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: -16px;
-                    left: -35px;
-                    width: 35px;
-                    height: 35px;
-                    background: url('../../../public/icons/grain.png') center (center / cover) no-repeat
-                }
+            @include menu_links;
+            &:first-of-type::before {
+                top: -16px;
+                left: -30px;
             }
         }
     }

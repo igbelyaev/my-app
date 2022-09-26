@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+.footer {
+    width: 100%;
+    padding: 30px 0 20px;
+    &_menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        width: 355px;
+        height: 40px;
+        margin: 0 auto 30px;
+    }
+    a {
+        @include menu_links;
+        color: #000;
+        &:first-of-type::before {
+            top: -20px;
+            left: -30px;
+            background: url('../../../public/icons/grain_black.png') center (center / cover) no-repeat
+        }
+    }
+    .beans {
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -26,3 +26,22 @@ a {
     line-height: 20px;
     color: #000000;
 }
+
+@mixin menu_links {
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    &:first-of-type {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: url('../public/icons/grain.png') center (center / cover) no-repeat
+        }
+    }
+}
