@@ -4,7 +4,6 @@ import About from './components/app-about/app-about';
 import Control from './components/app-comtrol/app-control';
 import Catalog from './components/app-catalog/app-catalog';
 import Footer from './components/app-footer/app-footer';
-// import Filter from './components/app-filter/app-filter';
 
 import './App.scss';
 
@@ -30,21 +29,33 @@ class App extends Component {
         this.setState(() => {return ({filter: active})});
     }
 
-    render() {
-        const {catalog, filter} = this.state;
-        let visibleCatalog = [];
+    searchFilter = (value) => {
+        this.setState(() => {return ({value: value})});
+    }
+
+    catalogRendering = (filter, value, catalog) => {
+        let arr = [];
         
         if (filter === '') {
-            visibleCatalog = catalog;
+            arr = catalog.filter(item => item.sort.indexOf(value) > -1);
         } else {
-            visibleCatalog = catalog.filter(item => item.country == filter);
+            arr = catalog.filter(item => item.country == filter && item.sort.indexOf(value) > -1);
         }
+
+        return arr;
+    }
+
+    render() {
+        const {catalog, filter, value} = this.state;
+        let visibleCatalog = this.catalogRendering(filter, value, catalog);
         
         return (
             <div className="App">
                 <Header />
                 <About />
-                <Control filterSelection={this.filterSelection}/>
+                <Control 
+                    filterSelection={this.filterSelection}
+                    searchFilter={this.searchFilter}/>
                 <Catalog catalog={visibleCatalog}/>
                 <Footer />
             </div>

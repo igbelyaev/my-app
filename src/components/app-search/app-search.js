@@ -10,7 +10,23 @@ class Search extends Component {
         }
     }
 
-    
+    onChange = (e) => {
+        const search = e.target.value;
+
+        this.setState(() => ({name: search}));
+
+        this.props.searchFilter(search);
+    }
+
+    onFocus = (e) => {
+        e.target.placeholder = '';
+    }
+
+    onBlur = (e) => {
+        if (e.target.value == '') {
+            e.target.placeholder = 'start typing here...';
+        }   
+    }
 
     render() {
         return (
@@ -20,7 +36,10 @@ class Search extends Component {
                     className="search_input" 
                     type="text" 
                     placeholder='start typing here...'
-                    value={this.state.name}/>
+                    value={this.state.name}
+                    onChange={this.onChange}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}/>
             </div>
             
         )

@@ -12,6 +12,7 @@
     &_input {
         width: 180px;
         height: 30px;
+        padding: 0 10px;
         background: #FFFFFF;
         box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
         border: none;
@@ -22,5 +23,12 @@
         line-height: 17px;
         text-align: center;
         color: rgba(0, 0, 0, 0.5);
+        outline: none;
+        &:focus {
+            background: rba(0,0,0,.2);
+            text-align: left;
+            font-size: 14;
+            color:rgba(0, 0, 0, 1);
+        }
     }
 }
